@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  color: #fff0f7;
+  background:
+    radial-gradient(ellipse at center, #291020 0%, #100710 50%, #050307 100%);
+  font-family: "Cormorant Garamond", serif;
+}
+
+#stars {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.glow {
+  position: fixed;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: .15;
+  pointer-events: none;
+  animation: floatGlow 8s ease-in-out infinite alternate;
+}
+
+.glow-one {
+  background: #ff238a;
+  top: -100px;
+  left: -100px;
+}
+
+.glow-two {
+  background: #b31368;
+  right: -100px;
+  bottom: -100px;
+  animation-delay: -4s;
+}
+
+@keyframes floatGlow {
+  to {
+    transform: translate(70px, 50px);
+  }
+}
+
+.welcome-card {
+  position: relative;
+  z-index: 1;
+  width: min(650px, 92%);
+  padding: 35px 25px;
+  text-align: center;
+  animation: appear 1.2s ease both;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.top-badge,
+.eyebrow,
+.bottom-note {
+  font-family: "Cinzel", serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #e9a1c5;
+}
+
+.heart-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 30px auto;
+  display: grid;
+  place-items: center;
+}
+
+.heart {
+  font-size: 100px;
+  color: #ff4f9a;
+  text-shadow:
+    0 0 15px #ff4f9a,
+    0 0 40px #ff238a,
+    0 0 80px #d91470;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.13);
+  }
+}
+
+.heart-orbit {
+  position: absolute;
+  inset: 10px;
+  border: 1px solid #ff76b555;
+  border-radius: 50%;
+}
+
+.orbit-one {
+  animation: orbit 9s linear infinite;
+}
+
+.orbit-two {
+  inset: 0;
+  transform: rotateX(65deg);
+  animation: orbit 12s linear infinite reverse;
+}
+
+.orbit-three {
+  inset: 20px;
+  transform: rotateY(65deg);
+  animation: orbit 15s linear infinite;
+}
+
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.eyebrow {
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+h1 {
+  margin-top: 20px;
+  font-family: "Cinzel", serif;
+  font-size: clamp(28px, 5vw, 43px);
+  font-weight: 400;
+}
+
+.name {
+  margin-top: 5px;
+  font-size: clamp(48px, 9vw, 75px);
+  color: #ff8fbe;
+  font-weight: 600;
+  text-shadow: 0 0 30px #ff238a55;
+}
+
+.name span {
+  font-size: 35px;
+  margin-left: 8px;
+}
+
+.divider {
+  width: 180px;
+  height: 1px;
+  margin: 22px auto;
+  background: linear-gradient(90deg, transparent, #ff5da6, transparent);
+  position: relative;
+}
+
+.divider span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 12px;
+  background: #190b17;
+  color: #ff75b2;
+}
+
+.message {
+  font-size: 23px;
+  color: #f8dce9;
+}
+
+.birthday-note {
+  margin-top: 10px;
+  color: #bba4b3;
+  font-size: 18px;
+}
+
+.enter-button {
+  margin-top: 32px;
+  padding: 15px 25px;
+  border: 1px solid #ff65a8;
+  background: linear-gradient(120deg, #51102f, #a21d59, #51102f);
+  background-size: 200% 100%;
+  color: white;
+  font-family: "Cinzel", serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  box-shadow: 0 0 25px #ff238a25;
+  transition: .3s ease;
+}
+
+.enter-button span {
+  margin-left: 12px;
+}
+
+.enter-button:hover {
+  background-position: 100% 0;
+  box-shadow: 0 0 35px #ff238a80;
+  transform: translateY(-3px);
+}
+
+.bottom-note {
+  margin-top: 35px;
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: #8f7084;
+}
+
+.transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: #08040b;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .7s ease, visibility .7s ease;
+}
+
+.transition-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.transition-heart {
+  color: #ff4f9a;
+  font-size: 70px;
+  text-shadow: 0 0 40px #ff238a;
+  animation: heartbeat 1s infinite;
+}
+
+.transition-overlay p {
+  font-family: "Cinzel", serif;
+  color: #ff9bc7;
+  font-size: 10px;
+  letter-spacing: 5px;
+}
+
+.transition-overlay h2 {
+  font-family: "Cinzel", serif;
+  font-size: clamp(28px, 6vw, 45px);
+  font-weight: 400;
+}
+
+.transition-overlay > span {
+  color: #ad8fa2;
+  font-size: 18px;
+}
+
+@media (max-width: 480px) {
+  .welcome-card {
+    padding: 20px 10px;
+  }
+
+  .top-badge {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .heart-container {
+    transform: scale(.85);
+    margin: 15px auto;
+  }
+
+  .message {
+    font-size: 20px;
+  }
+
+  .birthday-note {
+    font-size: 16px;
+  }
+
+  .enter-button {
+    padding: 14px 15px;
+    font-size: 10px;
+  }
+}

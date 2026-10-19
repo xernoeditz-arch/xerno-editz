@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Memories</title>
+  <link rel="stylesheet" href="page4.css">
+</head>
+<body>
+
+  <div class="stars" id="stars"></div>
+
+  <header class="hero">
+    <p class="eyebrow">A COLLECTION OF SPECIAL MOMENTS</p>
+    <h1>Our Little <span>World</span></h1>
+    <p class="subtitle">
+      Some moments deserve to be remembered.
+    </p>
+    <div class="divider">♥</div>
+  </header>
+
+  <main>
+
+    <!-- VIDEO SECTION -->
+    <section class="section video-section">
+      <p class="section-label">01 — A MOMENT TO REMEMBER</p>
+      <h2>SOMETHING THAT<span> I WANT TO SAY</span></h2>
+      <p class="section-description">
+        A video worth watching again.
+      </p>
+
+      <div class="video-frame">
+        <video id="memoryVideo" controls playsinline preload="metadata">
+          <source src="maple2.mp4"video/mp4">
+          Your browser does not support this video.
+        </video>
+
+        <div class="video-placeholder" id="videoPlaceholder">
+          <div class="play-symbol">▶</div>
+          <h3>Your Video Goes Here</h3>
+          <p>Add your video as <strong>memory.mp4</strong></p>
+        </div>
+      </div>
+
+      <p class="video-caption">
+        A little moment, preserved forever.
+      </p>
+    </section>
+
+    <!-- PHOTO GALLERY -->
+    <section class="section gallery-section">
+      <p class="section-label">02 — THE MEMORIES</p>
+      <h2>Captured <span>Moments</span></h2>
+      <p class="section-description">
+        Little moments, beautiful memories.
+      </p>
+
+      <div class="gallery">
+
+        <button class="photo-card" data-image="images/memory1.jpg"
+          data-caption="A moment worth remembering.">
+          <div class="photo">
+            <img src="cake.jpg" alt="Memory one">
+            <span class="photo-number">01</span>
+          </div>
+          <p>HAPPY BIRTHDAY</p>
+        </button>
+
+        <button class="photo-card" data-image="images/memory2.jpg"
+          data-caption="Some moments stay special.">
+          <div class="photo">
+            <img src="cat.jpg" alt="Memory two">
+            <span class="photo-number">02</span>
+          </div>
+          <p>ATITUADE 😒</p>
+        </button>
+
+        <button class="photo-card" data-image="images/memory3.jpg"
+          data-caption="A little piece of happiness.">
+          <div class="photo">
+            <img src="hatt.jpg" alt="Memory three">
+            <span class="photo-number">03</span>
+          </div>
+          <p>GURL ☆*: .｡. o(≧▽≦)o .｡.:*☆</p>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- PERSONAL MESSAGE -->
+    <section class="section message-section">
+      <p class="section-label">03 — A FEW WORDS</p>
+      <h2>Things Worth <span>Saying</span></h2>
+
+      <div class="message-card">
+        <span class="quote-mark">“</span>
+
+        <p>
+          Some people become an important part of our lives
+          without even realizing it.
+        </p>
+
+        <p>
+          The conversations, the laughter, and the little things
+          can become memories we carry for a long time.
+        </p>
+
+        <p>
+          This page is a small way to celebrate those moments.
+        </p>
+
+        <span class="message-heart">♥</span>
+      </div>
+    </section>
+
+    <!-- SECRET LETTER -->
+    <section class="section letter-section">
+      <p class="section-label">04 — SOMETHING PERSONAL</p>
+      <h2>A <span>Private Letter</span></h2>
+      <p class="section-description">
+        There's one more thing to read.
+      </p>
+
+      <button class="envelope-button" id="envelopeButton"
+        aria-label="Open the letter">
+        <div class="envelope">
+          <div class="envelope-back"></div>
+          <div class="letter-paper">
+            <span>♥</span>
+          </div>
+          <div class="envelope-front"></div>
+          <div class="envelope-flap"></div>
+          <div class="envelope-seal">♥</div>
+        </div>
+        <span class="envelope-hint">CLICK TO OPEN</span>
+      </button>
+    </section>
+
+  </main>
+
+  <!-- PHOTO LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose"
+      aria-label="Close photo">×</button>
+    <img id="lightboxImage" src="" alt="Selected memory">
+    <p id="lightboxCaption"></p>
+  </div>
+
+  <!-- LETTER MODAL -->
+  <div class="letter-modal" id="letterModal" aria-hidden="true">
+    <div class="letter-modal-card">
+      <button class="modal-close" id="modalClose"
+        aria-label="Close letter">×</button>
+
+      <p class="section-label">A LETTER FOR MAPLE</p>
+      <h2>One Last <span>Message</span></h2>
+
+      <div class="letter-divider">♥</div>
+
+      <div class="letter-body">
+        <p>Hey Maple,</p>
+
+        <p>
+          I wanted to make something a little different for your
+          birthday, something you could look back at whenever you wanted.
+        </p>
+
+        <p>
+          I hope the coming year brings you new experiences,
+          good memories, plenty of laughter, and reasons to be proud
+          of yourself.
+        </p>
+
+        <p>
+          Thank you for being a part of these memories.
+          I hope there are many more to come.
+        </p>
+
+        <p class="letter-ending">Happy Birthday. ♥</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>♥</span>
+    <p>Made to remember.</p>
+  </footer>
+
+  <script src="page4.js"></script>
+</body>
+</html>

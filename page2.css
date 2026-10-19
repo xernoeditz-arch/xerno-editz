@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  color: #f9eaf2;
+  background: radial-gradient(ellipse at center, #28101f, #08050a 75%);
+  font-family: "Cormorant Garamond", serif;
+}
+
+button {
+  font: inherit;
+}
+
+.stars {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(2px 2px at 15% 25%, #ffd9eb, transparent),
+    radial-gradient(1px 1px at 70% 35%, #ff9bc7, transparent),
+    radial-gradient(2px 2px at 85% 80%, #fff, transparent),
+    radial-gradient(1px 1px at 35% 75%, #ff9bc7, transparent);
+  background-size: 180px 180px;
+  animation: starsMove 25s linear infinite;
+}
+
+@keyframes starsMove {
+  to { background-position: 180px 180px; }
+}
+
+.intro {
+  text-align: center;
+  padding: 60px 20px 30px;
+}
+
+.eyebrow,
+.modal-eyebrow {
+  color: #ff9bc7;
+  font-family: "Cinzel", serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+}
+
+.intro h1 {
+  margin-top: 20px;
+  font-family: "Cinzel", serif;
+  font-size: clamp(30px, 5vw, 52px);
+  font-weight: 400;
+}
+
+.intro h1 span {
+  color: #ff8fbe;
+}
+
+.subtitle {
+  margin-top: 15px;
+  color: #c6aebc;
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+.divider {
+  width: 170px;
+  margin: 25px auto 0;
+  color: #ff65a8;
+  border-bottom: 1px solid #ff65a866;
+  line-height: 0;
+}
+
+.doors-container {
+  width: min(1100px, 94%);
+  margin: 35px auto 50px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 35px;
+}
+
+.door-card {
+  min-width: 0;
+  color: #f9eaf2;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.door-frame {
+  position: relative;
+  width: min(100%, 260px);
+  height: 335px;
+  margin: 0 auto 25px;
+  padding: 12px;
+  background: linear-gradient(135deg, #b28a69, #24151b, #79513c, #180e13);
+  border: 2px solid #9d7659;
+  box-shadow: 0 15px 40px #000a;
+  transition: .4s ease;
+}
+
+.door-card:hover .door-frame {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px #000b, 0 0 30px #ff4f9a55;
+}
+
+.door {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transform-origin: left center;
+  border: 4px solid #120a0e;
+  outline: 1px solid #a17a58;
+  background: linear-gradient(90deg, #130c11, #42232e, #211219, #4a2734, #130c11);
+  box-shadow: inset 0 0 35px #000;
+  transition: transform 1s ease;
+}
+
+.door::before,
+.door::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: linear-gradient(90deg, #120b0e, #967052, #211319);
+}
+
+.door::before { left: 10px; }
+.door::after { right: 10px; }
+
+.door-arch {
+  position: absolute;
+  top: 12px;
+  left: 15%;
+  width: 70%;
+  height: 115px;
+  border: 5px ridge #805c46;
+  border-radius: 100px 100px 4px 4px;
+  background: radial-gradient(ellipse, #672b47, #130b10);
+}
+
+.door-panel {
+  position: absolute;
+  left: 20%;
+  width: 60%;
+  display: grid;
+  place-items: center;
+  border: 4px ridge #75513e;
+  background: linear-gradient(135deg, #492832, #24131c, #42202e);
+  box-shadow: inset 0 0 18px #000;
+}
+
+.panel-top {
+  top: 25px;
+  height: 95px;
+  color: #d4ad80;
+  font-size: 38px;
+}
+
+.panel-middle {
+  top: 137px;
+  height: 75px;
+}
+
+.panel-bottom {
+  top: 227px;
+  height: 75px;
+}
+
+.door-handle {
+  position: absolute;
+  right: 18px;
+  top: 52%;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 1px solid #d8b27b;
+  background: radial-gradient(circle at 30% 30%, #f7db9c, #8c6034);
+  z-index: 2;
+}
+
+.door-number {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #a14c72;
+  border-radius: 50%;
+  background: #100810;
+  color: #ff9bc7;
+  font-family: "Cinzel", serif;
+}
+
+.door-card:hover .door {
+  box-shadow: inset 0 0 35px #ff4f9a33;
+}
+
+.door-card.opening .door {
+  transform: perspective(800px) rotateY(-65deg);
+}
+
+.door-card h2 {
+  font-family: "Cinzel", serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #f8dce9;
+}
+
+.door-card > p {
+  margin: 10px 0 16px;
+  color: #a997a2;
+  font-size: 17px;
+}
+
+.door-hint {
+  color: #d27ba2;
+  font-family: "Cinzel", serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+footer {
+  padding: 10px 20px 35px;
+  text-align: center;
+  color: #ff65a8;
+  font-size: 22px;
+}
+
+footer p {
+  margin-top: 8px;
+  color: #806d79;
+  font-size: 16px;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #050207df;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: .4s ease;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-box {
+  position: relative;
+  width: min(540px, 100%);
+  padding: 50px 30px;
+  text-align: center;
+  background: linear-gradient(145deg, #351323, #0c080e);
+  border: 1px solid #a94d78;
+  box-shadow: 0 0 40px #ff4f9a30;
+  transform: translateY(15px);
+  transition: .4s ease;
+}
+
+.modal.active .modal-box {
+  transform: translateY(0);
+}
+
+.close-button {
+  position: absolute;
+  right: 14px;
+  top: 5px;
+  color: #dca1bd;
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.modal-icon {
+  margin-bottom: 15px;
+  color: #ff9bc7;
+  font-size: 40px;
+}
+
+.modal-box h2 {
+  margin-top: 15px;
+  font-family: "Cinzel", serif;
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.modal-divider {
+  margin: 18px 0;
+  color: #ff65a8;
+}
+
+#modalText {
+  color: #d5bdca;
+  font-size: 21px;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+#modalExtra {
+  margin-top: 20px;
+  color: #ff9bc7;
+  font-size: 18px;
+}
+
+@media (max-width: 850px) {
+  .doors-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 45px 25px;
+  }
+
+  .door-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .intro {
+    padding-top: 40px;
+  }
+
+  .eyebrow {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .subtitle {
+    font-size: 17px;
+  }
+
+  .doors-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .door-card:last-child {
+    grid-column: auto;
+  }
+
+  .door-frame {
+    width: 235px;
+    height: 310px;
+  }
+
+  .modal-box {
+    padding: 45px 20px 35px;
+  }
+}

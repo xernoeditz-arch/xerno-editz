@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maple's Secret World ♡</title>
+  <link rel="stylesheet" href="page2.css">
+</head>
+<body>
+
+  <div class="stars" id="stars"></div>
+
+  <header class="intro">
+    <p class="eyebrow">✦ A LITTLE WORLD MADE FOR YOU ✦</p>
+    <h1>Choose Your <span>Destiny</span></h1>
+    <p class="subtitle">
+      Three mysterious doors await you, Maple.<br>
+      Each one holds a little piece of something special.
+    </p>
+    <div class="divider">♥</div>
+  </header>
+
+  <main class="doors-container">
+
+    <button class="door-card" data-door="heart">
+      <div class="door-frame">
+        <div class="door">
+          <div class="door-arch"></div>
+          <div class="door-panel panel-top">♥</div>
+          <div class="door-panel panel-middle"></div>
+          <div class="door-panel panel-bottom"></div>
+          <div class="door-handle"></div>
+        </div>
+        <div class="door-number">I</div>
+      </div>
+      <h2>Words From My Heart</h2>
+      <p>A few words meant only for you.</p>
+      <span class="door-hint">✧ OPEN THE DOOR ✧</span>
+    </button>
+
+    <button class="door-card" data-door="memories">
+      <div class="door-frame">
+        <div class="door">
+          <div class="door-arch"></div>
+          <div class="door-panel panel-top">❀</div>
+          <div class="door-panel panel-middle"></div>
+          <div class="door-panel panel-bottom"></div>
+          <div class="door-handle"></div>
+        </div>
+        <div class="door-number">II</div>
+      </div>
+      <h2>Our Little Memories</h2>
+      <p>Little moments worth keeping forever.</p>
+      <span class="door-hint">✧ OPEN THE DOOR ✧</span>
+    </button>
+
+    <button class="door-card" data-door="surprise">
+      <div class="door-frame">
+        <div class="door">
+          <div class="door-arch"></div>
+          <div class="door-panel panel-top">♛</div>
+          <div class="door-panel panel-middle"></div>
+          <div class="door-panel panel-bottom"></div>
+          <div class="door-handle"></div>
+        </div>
+        <div class="door-number">III</div>
+      </div>
+      <h2>A Little Surprise</h2>
+      <p>Something special is waiting inside.</p>
+      <span class="door-hint">✧ OPEN THE DOOR ✧</span>
+    </button>
+
+  </main>
+
+  <footer>♥<p>Made with love, especially for Maple.</p></footer>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-box">
+      <button class="close-button" id="closeModal" aria-label="Close">×</button>
+      <div class="modal-icon" id="modalIcon">♥</div>
+      <p class="modal-eyebrow">A LITTLE SECRET FOR MAPLE</p>
+      <h2 id="modalTitle">A Special Message</h2>
+      <div class="modal-divider">✦ ♥ ✦</div>
+      <p id="modalText"></p>
+      <p id="modalExtra"></p>
+    </div>
+  </div>
+
+  <script src="page2.js"></script>
+</body>
+</html>
